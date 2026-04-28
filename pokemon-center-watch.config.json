@@ -1,0 +1,38 @@
+{
+  "pollSeconds": 90,
+  "requestTimeoutSeconds": 20,
+  "openProductPage": false,
+  "alertOnRestock": true,
+  "notifyInitial": false,
+  "maxProductsPerAlert": 10,
+  "targets": [
+    {
+      "name": "Pokemon Center UK New Releases",
+      "url": "https://www.pokemoncenter.com/en-gb/category/new-releases",
+      "includeKeywords": [
+        "pokemon tcg",
+        "trading card game",
+        "elite trainer box",
+        "booster",
+        "bundle",
+        "mini tin",
+        "collection",
+        "battle deck",
+        "card sleeves",
+        "deck box",
+        "playmat"
+      ]
+    },
+    {
+      "name": "Pokemon Center UK TCG Search",
+      "url": "https://www.pokemoncenter.com/en-gb/search/tcg-cards"
+    },
+    {
+      "name": "Pokemon Center UK Elite Trainer Boxes",
+      "url": "https://www.pokemoncenter.com/en-gb/search/etb-pokemon-center",
+      "includeKeywords": [
+        "elite trainer box"
+      ]
+    }
+  ]
+}

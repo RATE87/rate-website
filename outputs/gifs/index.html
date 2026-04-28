@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ShiftFit GIF Review</title>
+  <style>
+    :root {
+      --bg: #eef2f7;
+      --panel: #f8fafc;
+      --card: #ffffff;
+      --line: #d7dee8;
+      --text: #223042;
+      --muted: #5b6b7d;
+      --accent: #2f6edb;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background:
+        radial-gradient(circle at top left, #ffffff 0%, #eef2f7 45%, #e6ecf4 100%);
+      color: var(--text);
+    }
+
+    .wrap {
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 32px 20px 48px;
+    }
+
+    .hero {
+      background: rgba(248, 250, 252, 0.86);
+      border: 1px solid rgba(215, 222, 232, 0.95);
+      border-radius: 28px;
+      padding: 28px;
+      box-shadow: 0 18px 40px rgba(54, 72, 94, 0.08);
+      backdrop-filter: blur(8px);
+    }
+
+    h1 {
+      margin: 0 0 10px;
+      font-size: clamp(28px, 4vw, 44px);
+      line-height: 1;
+      letter-spacing: -0.03em;
+    }
+
+    .sub {
+      margin: 0;
+      max-width: 760px;
+      font-size: 16px;
+      line-height: 1.6;
+      color: var(--muted);
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .pill {
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: #ffffff;
+      border: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 18px;
+      margin-top: 26px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.86);
+      border: 1px solid rgba(215, 222, 232, 0.95);
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 14px 32px rgba(54, 72, 94, 0.08);
+      transition: transform 160ms ease, box-shadow 160ms ease;
+    }
+
+    .card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 20px 38px rgba(54, 72, 94, 0.12);
+    }
+
+    .media {
+      display: grid;
+      place-items: center;
+      min-height: 270px;
+      background:
+        linear-gradient(180deg, #f8fbff 0%, #edf2f8 100%);
+      padding: 16px;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      image-rendering: auto;
+    }
+
+    .body {
+      padding: 16px 16px 18px;
+    }
+
+    h2 {
+      margin: 0 0 6px;
+      font-size: 18px;
+      letter-spacing: -0.02em;
+    }
+
+    .file {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+      word-break: break-word;
+    }
+
+    .footer {
+      margin-top: 24px;
+      padding: 18px 20px;
+      border-radius: 20px;
+      background: rgba(47, 110, 219, 0.08);
+      color: #27405f;
+      border: 1px solid rgba(47, 110, 219, 0.14);
+      line-height: 1.6;
+    }
+
+    a {
+      color: var(--accent);
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="hero">
+      <h1>ShiftFit GIF Review</h1>
+      <p class="sub">
+        Starter review page for the first batch of front-view exercise animations generated from the supplied character art.
+        This page is meant to make quick visual review easier before we refine or expand the library.
+      </p>
+      <div class="meta">
+        <div class="pill">13 prototype GIFs</div>
+        <div class="pill">Clean 2D app-illustration direction</div>
+        <div class="pill">Source: single front-view character</div>
+      </div>
+    </section>
+
+    <section class="grid">
+      <article class="card">
+        <div class="media"><img src="dumbbell-curl-front-v1.gif" alt="Dumbbell Curl"></div>
+        <div class="body"><h2>Dumbbell Curl</h2><p class="file">dumbbell-curl-front-v1.gif</p></div>
+      </article>
+      <article class="card">
+        <div class="media"><img src="hammer-curl-front-v1.gif" alt="Hammer Curl"></div>
+        <div class="body"><h2>Hammer Curl</h2><p class="file">hammer-curl-front-v1.gif</p></div>
+      </article>
+      <article class="card">
+        <div class="media"><img src="barbell-curl-front-v1.gif" alt="Barbell Curl"></div>
+        <div class="body"><h2>Barbell Curl</h2><p class="file">barbell-curl-front-v1.gif</p></div>
+      </article>
+      <article class="card">
+        <div class="media"><img src="lateral-raise-front-v1.gif" alt="Lateral Raise"></div>
+        <div class="body"><h2>Lateral Raise</h2><p class="file">lateral-raise-front-v1.gif</p></div>
+      </article>
+      <article class="card">
+        <div class="media"><img src="upright-row-front-v1.gif" alt="Upright Row"></div>
+        <div class="body"><h2>Upright Row</h2><p class="file">upright-row-front-v1.gif</p></div>
+      </article>
+      <article class="card">
+        <div class="media"><img src="overhead-press-front-v1.gif" alt="Overhead Press"></div>
+        <div class="body"><h2>Overhead Press</h2><p class="file">overhead-press-front-v1.gif</p></div>
+      </article>
+      <article class="card">
+        <div class="media"><img src="dumbbell-shoulder-press-front-v1.gif" alt="Dumbbell Shoulder Press"></div>
+        <div class="body"><h2>Dumbbell Shoulder Press</h2><p class="file">dumbbell-shoulder-press-front-v1.gif</p></div>
+      </article>
+      <article class="card">
+        <div class="media"><img src="band-pull-apart-front-v1.gif" alt="Band Pull Apart"></div>
+        <div class="body"><h2>Band Pull Apart</h2><p class="file">band-pull-apart-front-v1.gif</p></div>
+      </article>
+      <article class="card">
+        <div class="media"><img src="band-curl-front-v1.gif" alt="Band Curl"></div>
+        <div class="body"><h2>Band Curl</h2><p class="file">band-curl-front-v1.gif</p></div>
+      </article>
+      <article class="card">
+        <div class="media"><img src="band-overhead-press-front-v1.gif" alt="Band Overhead Press"></div>
+        <div class="body"><h2>Band Overhead Press</h2><p class="file">band-overhead-press-front-v1.gif</p></div>
+      </article>
+      <article class="card">
+        <div class="media"><img src="goblet-squat-front-v1.gif" alt="Goblet Squat"></div>
+        <div class="body"><h2>Goblet Squat</h2><p class="file">goblet-squat-front-v1.gif</p></div>
+      </article>
+      <article class="card">
+        <div class="media"><img src="dumbbell-squat-front-v1.gif" alt="Dumbbell Squat"></div>
+        <div class="body"><h2>Dumbbell Squat</h2><p class="file">dumbbell-squat-front-v1.gif</p></div>
+      </article>
+      <article class="card">
+        <div class="media"><img src="wall-sit-front-v1.gif" alt="Wall Sit"></div>
+        <div class="body"><h2>Wall Sit</h2><p class="file">wall-sit-front-v1.gif</p></div>
+      </article>
+    </section>
+
+    <section class="footer">
+      These are prototype assets generated from a single front-facing illustration, so they work best for standing front-view exercises.
+      Once you’ve reviewed this batch, I can either polish these motions or build a better rig strategy for the full library.
+    </section>
+  </main>
+</body>
+</html>
