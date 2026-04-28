@@ -1,0 +1,38 @@
+{
+  "name": "rate-website",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build --webpack",
+    "start": "next start",
+    "pokemon:watch": "node scripts/pokemon-center-watch.mjs",
+    "pokemon:check": "node scripts/pokemon-center-watch.mjs --once",
+    "pokemon:prime": "node scripts/pokemon-center-watch.mjs --prime",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "@portabletext/react": "^6.0.3",
+    "@sanity/client": "^7.20.0",
+    "@sanity/image-url": "^2.1.1",
+    "@sanity/vision": "^3.99.0",
+    "@tailwindcss/postcss": "^4.2.2",
+    "@tailwindcss/typography": "^0.5.19",
+    "next": "^16.2.3",
+    "next-sanity": "^12.2.2",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
+    "sanity": "^3.99.0",
+    "styled-components": "^6.4.0",
+    "tailwindcss": "^4.2.2"
+  },
+  "devDependencies": {
+    "@types/node": "^24.7.2",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "eslint": "^10.2.0",
+    "eslint-config-next": "^16.2.3",
+    "typescript": "^6.0.2"
+  }
+}
