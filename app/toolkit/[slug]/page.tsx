@@ -557,7 +557,14 @@ export default async function ToolkitSlugPage({ params }: ToolkitSlugPageProps) 
               ))}
             </div>
           ) : (
-            <PillarResourceList resources={resources} sections={[...pillarSections[slug]]} />
+            <PillarResourceList
+              resources={resources}
+              sections={pillarSections[slug].map((section) => ({
+                title: section.title,
+                description: section.description,
+                resourceSlugs: [...section.resourceSlugs],
+              }))}
+            />
           )}
         </section>
       </main>
