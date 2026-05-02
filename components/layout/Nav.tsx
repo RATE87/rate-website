@@ -3,7 +3,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { GradientButton } from '@/components/ui/GradientButton'
 import { GradientText } from '@/components/ui/GradientText'
 import { cx } from '@/lib/site'
@@ -17,9 +17,50 @@ const navItems = [
 export function Nav() {
   const pathname = usePathname()
   const [open, setOpen] = useState(false)
+  const [isVisible, setIsVisible] = useState(true)
+  const lastScrollY = useRef(0)
+  const idleTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
+
+  useEffect(() => {
+    const scheduleReturn = () => {
+      if (idleTimer.current) clearTimeout(idleTimer.current)
+      idleTimer.current = setTimeout(() => {
+        setIsVisible(true)
+      }, 3000)
+    }
+
+    const onScroll = () => {
+      const currentY = window.scrollY
+      const delta = currentY - lastScrollY.current
+
+      if (Math.abs(delta) > 8) {
+        if (delta > 0 && currentY > 96) {
+          setIsVisible(false)
+        } else {
+          setIsVisible(true)
+        }
+        lastScrollY.current = currentY
+      }
+
+      scheduleReturn()
+    }
+
+    scheduleReturn()
+    window.addEventListener('scroll', onScroll, { passive: true })
+
+    return () => {
+      window.removeEventListener('scroll', onScroll)
+      if (idleTimer.current) clearTimeout(idleTimer.current)
+    }
+  }, [])
 
   return (
-    <header className="sticky top-4 z-50 mx-auto w-full max-w-7xl px-4">
+    <header
+      className={cx(
+        'sticky top-4 z-50 mx-auto w-full max-w-7xl px-4 transition-transform duration-300',
+        isVisible ? 'translate-y-0' : '-translate-y-[140%]'
+      )}
+    >
       <div className="rounded-[28px] border border-white/10 bg-navy-800/95 px-5 py-4 text-white shadow-glow backdrop-blur">
         <div className="flex items-center justify-between gap-4">
           <Link href="/" className="flex items-center gap-3 text-xl font-black tracking-[0.18em]">

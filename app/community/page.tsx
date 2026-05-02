@@ -11,6 +11,16 @@ export const metadata: Metadata = {
 }
 
 const discordInviteUrl = 'https://discord.gg/kmnatQPW'
+const facebookPageUrl = 'https://www.facebook.com/RATEFB'
+const facebookPageId = '123204327537587'
+const facebookPagePluginUrl = `https://www.facebook.com/plugins/page.php?href=${encodeURIComponent(
+  facebookPageUrl
+)}&tabs=timeline&width=500&height=520&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false`
+const xHandle = '@_R_A_TE'
+const xProfileUrl = 'https://x.com/_R_A_TE'
+const xAvatarUrl = 'https://unavatar.io/x/_R_A_TE'
+const tikTokHandle = '@rougharoundtheedg'
+const tikTokProfileUrl = 'https://www.tiktok.com/@rougharoundtheedg'
 
 export default async function CommunityPage() {
   const events = await getEvents()
@@ -74,23 +84,28 @@ export default async function CommunityPage() {
           <h2 className="mt-3 text-3xl font-black tracking-tight text-slate-900">Facebook</h2>
           <div className="mt-5 rounded-[24px] border border-slate-200 bg-slate-50 p-5">
             <div className="flex items-center gap-4 rounded-[18px] bg-white p-4">
-              <div className="grid h-16 w-16 place-items-center overflow-hidden rounded-full bg-rate-gradient text-lg font-black text-white">
-                F
-              </div>
+              <img
+                src={`https://graph.facebook.com/${facebookPageId}/picture?type=large`}
+                alt="RATE Facebook profile"
+                className="h-16 w-16 rounded-full object-cover"
+              />
               <div>
                 <p className="text-lg font-black text-slate-900">Rough Around The Edges</p>
                 <p className="text-sm font-semibold text-slate-500">Facebook</p>
               </div>
             </div>
-            <div className="mt-4 rounded-[18px] bg-white p-4">
-              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-rate-purple">Latest post</p>
-              <p className="mt-3 text-sm leading-7 text-slate-600">
-                Live Facebook page connected. Open the page below to view the latest full post without the cramped
-                embedded scroll area.
-              </p>
+            <div className="mt-4 overflow-hidden rounded-[18px] bg-white">
+              <iframe
+                title="RATE Facebook feed"
+                src={facebookPagePluginUrl}
+                width="100%"
+                height="520"
+                style={{ border: 'none', overflow: 'hidden' }}
+                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+              />
             </div>
           </div>
-          <GradientButton href="https://www.facebook.com/profile.php?id=61550687766545" variant="ghost" className="mt-4 self-start">
+          <GradientButton href={facebookPageUrl} variant="ghost" className="mt-4 self-start">
             Open Facebook
           </GradientButton>
         </article>
@@ -98,20 +113,29 @@ export default async function CommunityPage() {
         <article className="flex h-full flex-col rounded-[30px] border border-slate-200 bg-white p-6 shadow-glow">
           <p className="text-sm font-extrabold uppercase tracking-[0.18em] text-rate-purple">Latest from RATE</p>
           <h2 className="mt-3 text-3xl font-black tracking-tight text-slate-900">X</h2>
-          <div className="mt-5 overflow-hidden rounded-[24px] border border-slate-200 bg-slate-50 p-3">
+          <div className="mt-5 rounded-[24px] border border-slate-200 bg-slate-50 p-5">
+            <div className="mb-4 flex items-center gap-4 rounded-[18px] bg-white p-4">
+              <img src={xAvatarUrl} alt="RATE X profile" className="h-16 w-16 rounded-full object-cover" />
+              <div>
+                <p className="text-lg font-black text-slate-900">{xHandle}</p>
+                <p className="text-sm font-semibold text-slate-500">X</p>
+              </div>
+            </div>
+            <div className="overflow-hidden rounded-[18px] bg-white p-3">
             <a
               className="twitter-timeline"
-              data-height="560"
+              data-height="460"
               data-theme="light"
-              data-chrome="nofooter noborders"
-              data-tweet-limit="2"
+              data-chrome="nofooter noborders noheader"
+              data-tweet-limit="1"
               data-dnt="true"
-              href="https://x.com/_R_A_TE"
+              href={xProfileUrl}
             >
-              Posts by @_R_A_TE
+              Posts by {xHandle}
             </a>
+            </div>
           </div>
-          <GradientButton href="https://x.com/_R_A_TE" variant="ghost" className="mt-4 self-start">
+          <GradientButton href={xProfileUrl} variant="ghost" className="mt-4 self-start">
             Open X
           </GradientButton>
         </article>
@@ -121,23 +145,30 @@ export default async function CommunityPage() {
           <h2 className="mt-3 text-3xl font-black tracking-tight text-slate-900">TikTok</h2>
           <div className="mt-5 rounded-[24px] border border-slate-200 bg-slate-50 p-5">
             <div className="flex items-center gap-4 rounded-[18px] bg-white p-4">
-              <div className="grid h-16 w-16 place-items-center overflow-hidden rounded-full bg-rate-teal text-lg font-black text-white">
-                T
-              </div>
+              <img src="https://unavatar.io/tiktok/rougharoundtheedg" alt="RATE TikTok profile" className="h-16 w-16 rounded-full object-cover" />
               <div>
-                <p className="text-lg font-black text-slate-900">@rougharoundtheedg</p>
+                <p className="text-lg font-black text-slate-900">{tikTokHandle}</p>
                 <p className="text-sm font-semibold text-slate-500">TikTok</p>
               </div>
             </div>
-            <div className="mt-4 rounded-[18px] bg-white p-4">
-              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-rate-purple">Latest video</p>
-              <p className="mt-3 text-sm leading-7 text-slate-600">
-                Live TikTok profile connected. Open the page below to view the latest video in full without the embedded
-                profile scroll frame.
-              </p>
+            <div className="mt-4 overflow-hidden rounded-[18px] bg-white p-3">
+              <blockquote
+                className="tiktok-embed"
+                cite={tikTokProfileUrl}
+                data-unique-id="rougharoundtheedg"
+                data-embed-from="oembed"
+                data-embed-type="creator"
+                style={{ maxWidth: '780px', minWidth: '288px' }}
+              >
+                <section>
+                  <a target="_blank" href={`${tikTokProfileUrl}?refer=creator_embed`} rel="noreferrer">
+                    {tikTokHandle}
+                  </a>
+                </section>
+              </blockquote>
             </div>
           </div>
-          <GradientButton href="https://www.tiktok.com/@rougharoundtheedg" variant="ghost" className="mt-4 self-start">
+          <GradientButton href={tikTokProfileUrl} variant="ghost" className="mt-4 self-start">
             Open TikTok
           </GradientButton>
         </article>
